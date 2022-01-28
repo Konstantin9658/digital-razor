@@ -1,0 +1,151 @@
+.header {
+  flex: 0 0 auto;
+  min-height: 260px;
+}
+
+.header__nav {
+  margin-bottom: 80px;
+}
+
+.header__nav-wrapper {
+  border-bottom: 1px solid rgba($gray, 0.12);
+}
+
+.header__nav-wrapper,
+.header__nav-page-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 130px;
+}
+
+.header__nav-list,
+.header__contact-list,
+.header__category-list {
+  @include reset-list;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.header__nav-list {
+  margin-left: 136px;
+}
+
+.header__nav-item a,
+.header__contact-item a,
+.header__category-item a {
+  padding-bottom: 2px;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: $trans--300;
+
+  &:hover,
+  &:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.header__nav-item {
+  margin-right: 32px;
+
+  a {
+    @include font(20px, 28px, 400, normal);
+    color: rgba($white, 0.8);
+  }
+}
+
+.header__contact-list {
+  margin-left: auto;
+}
+
+.header__contact-item {
+  margin-right: 56px;
+
+  &:last-child {
+    margin-right: 19px;
+  }
+
+  svg {
+    display: inline-block;
+    vertical-align: sub;
+  }
+}
+
+.header__contact-address {
+  @include font(20px, 28px, 400, normal);
+  color: $gray;
+  margin-left: 8px;
+}
+
+.header__contact-tel {
+  @include font(32px, 24px, 500, normal);
+  color: $white;
+  margin-left: 16px;
+  @include hover;
+}
+
+.header__contact-user-menu {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    border: 1.6px solid rgba(#acd5fe, 0.1);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    top: -18px;
+    left: -21px;
+  }
+
+  &:hover,
+  &:focus-visible {
+
+    svg {
+      stroke: $border-color;
+    }
+
+    &::after {
+      transition: $trans--300;
+      border-color: $border-color;
+    }
+  }
+}
+
+.header__category-list {
+  margin-left: 56px;
+}
+
+.header__category-item {
+  margin-right: 56px;
+
+  a {
+    @include font(32px, 40px, 400, normal);
+    @include hover;
+    color: $white;
+
+  }
+}
+
+.header__nav-page-control {
+  margin-left: auto;
+  margin-right: 19px;
+
+  button {
+    margin-left: 40px;
+
+    svg {
+
+      &:hover,
+      &:focus-visible {
+        transition: $trans--300;
+        transform: scale(0.9);
+      }
+    }
+  }
+}

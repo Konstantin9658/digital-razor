@@ -1,0 +1,16 @@
+.button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  color: $white;
+  // min-height: 45px;
+  // width: 100%;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  &--menu {
+    display: none;
+  }
+}
